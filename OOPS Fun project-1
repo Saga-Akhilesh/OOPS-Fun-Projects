@@ -1,0 +1,1018 @@
+package Mylaptop;
+import java.util.*;
+import java.io.*;
+public class Laptop{
+ String Nameoftheowner;
+ int Laptops_purchased;
+ double total_price;
+ int no_of_Laptops[] = new int[10];
+ //This keyword
+ Laptop(String Nameoftheowner,int Laptops_purchased,double total_price){
+ this.Nameoftheowner=Nameoftheowner;
+ this.Laptops_purchased=Laptops_purchased;
+ this.total_price=total_price;
+ System.out.println("Laptop is in good condition");
+ }
+ void display(){
+ System.out.println(Nameoftheowner+" "+Laptops_purchased+" 
+"+total_price);
+ }
+ Laptop(String company,String model){
+ System.out.println("Company of the laptop: " + company + "\nModel of the 
+laptop: "+model);
+ }
+ Laptop(int yearofpurchase,int price){
+ System.out.println("year of purchase: "+ yearofpurchase +" "+"\nPrice of 
+the laptop: "+ price);
+ }
+ Laptop(String ColourofLaptop,int BatteryBackup){
+ System.out.println("Colour of Laptop: " + ColourofLaptop +" 
+"+"\nBatteryBackup: "+ BatteryBackup);
+ }
+ Laptop(double Display){
+ System.out.println("Display: "+Display);
+ }
+ Laptop(int HDD,int SDD,int RAM){
+ System.out.println("HDD(in TB): "+ HDD + "\nSDD: "+ SDD +"\nRAM: 
+" + RAM);
+ }
+ Laptop(int Charger){
+ System.out.println("Charger(in watts): " +Charger);
+ }
+ Laptop(String Graphics,int NoofPorts,String Keyboard){
+ System.out.println("Graphics: "+ Graphics +" "+"\nNumber of 
+Ports:"+NoofPorts+" "+"Keyboard:"+Keyboard);
+ }
+ Laptop(double Weight,String Countryoforigin){
+ System.out.println("Weight(in lbs): "+Weight+" 
+"+"\nCountryoforigin:"+Countryoforigin);
+ }
+ //Assign different Laptop Model numbers
+ void Assign_differentLaptops() {
+ Scanner sc=new Scanner(System.in);
+ System.out.println("\nEnter laptop Model numbers:");
+ for(int i=0;i<5;i++)
+ {
+ no_of_Laptops[i]=sc.nextInt(); 
+ } 
+ for(int i=0;i<5;i++)
+ {
+ System.out.print(no_of_Laptops[i]+" "); 
+ }
+ }
+ //Method Overloading
+ //Comparing two laptop company names
+ void compare_Each_two_Laptop_CompanyNames(String laptop1){
+ if(laptop1.equals("Apple")) {
+ System.out.println("Both laptop Company names are matched");
+ }
+ else
+ {
+ System.out.println("Both Laptop company names are not matched");
+ }
+ }
+ void compare_Each_two_Laptop_CompanyNames(String laptop1,String 
+laptop2){
+ if(laptop1.equals(laptop2)) {
+ System.out.println("Both laptop Company names are matched");
+ }
+ else
+ {
+ System.out.println("Both Laptop company names are not matched");
+ }
+ }
+ //Comparing two Model numbers
+ void compare_Each_two_Laptop_Model(String laptop1){
+ if(laptop1.equals("Y790")){
+ System.out.println("Model numbers are matched");
+ }
+ else{
+ System.out.println("Model numbers are not matched");
+ }
+ }
+ void compare_Each_two_Laptop_Model(String laptop1,String laptop2){
+ if(laptop1.equals(laptop2)){
+ System.out.println("Model numbers are matched");
+ }
+ else{
+ System.out.println("Model numbers are not matched");
+ }
+ }
+ //Comparing two laptops
+ void compare_Each_two_Laptop_Colours(String laptop1){
+ if(laptop1.equals("Blue")){
+ System.out.println("Both laptop colours are matched");
+ }
+ else{
+ System.out.println("Both laptop colours are not matched");
+ }
+ }
+ void compare_Each_two_Laptop_Colours(String laptop1,String laptop2){
+ if(laptop1.equals(laptop2)){
+ System.out.println("Both laptop colours are matched");
+ }
+ else{
+ System.out.println("Both laptop colours are not matched");
+ }
+ }
+ //Changing Company Names
+ void changeCompanyName(String laptop1,String laptop2){ 
+ System.out.println("Laptop old name:"+laptop1);
+ laptop1=laptop2; 
+ System.out.println("Laptop new name:"+laptop2);
+ }
+ //Chaning Model Names
+ void changeModelName(String laptop1,String laptop2){ 
+ System.out.println("laptop old Model name:"+laptop1);
+ laptop1=laptop2; 
+ System.out.println("laptop new Model name:"+laptop2);
+ }
+ //changing colours
+ void changecolour(String laptop1,String laptop2){ 
+ System.out.println("laptop old colour:"+laptop1);
+ laptop1=laptop2; 
+ System.out.println("laptop new colour:"+laptop2);
+ }
+ void laptopnamelength(String laptop1){ 
+ int length=0;
+ char[] strCharArray=laptop1.toCharArray();
+ for(char c:strCharArray)
+ {
+ length++;
+ }
+ System.out.println("Laptop Name Length="+length);
+ }
+ void laptopnameRev(String laptop1){ 
+ int length=0;
+ char[] strCharArray=laptop1.toCharArray();
+ for(char c:strCharArray)
+ {
+ length++;
+ }
+ System.out.print("\nlaptop name in Reverse:");
+ while(length>0)
+ {
+ System.out.print(strCharArray[length-1]);
+ length--;
+ }
+ }
+ void convertUpper(String laptop1) {
+ System.out.print("\nLaptop Name in Uppercase:"+laptop1.toUpperCase());
+ }
+ void convertLower(String laptop1){
+ System.out.print("\nLaptop Name in 
+LowerCase:"+laptop1.toLowerCase());
+ }
+ void laptop1subString(String laptop1,String sub) {
+ if(laptop1.indexOf(sub)>-1)
+ System.out.print("\nSubstring exist in the Laptop name");
+ }
+ public static void main(String[]args) throws InterruptedException
+ {
+ Laptop obj=new Laptop("Akhilesh",1,89000);
+ //Array of objects
+ Computer obj1[]=new Computer[20];
+ obj1[0]=new Computer("Akhilesh",1,89000);
+ obj1[1]=new Computer("Lenovo","Y540");
+ obj1[2]=new Computer(2020,89000);
+ obj1[3]=new Computer("Black",1600);
+ obj1[4]=new Computer(15.6);
+ obj1[5]=new Computer(1,512,16);
+ obj1[6]=new Computer(150);
+ obj1[7]=new Computer("NVIDIA GeForce GTX 1650",9,"Whitebacklit");
+ obj1[8]=new Computer(5.1,"China");
+ Students obj2[]=new Students[10];
+ obj2[0]=new Students("Akhilesh",1,89000);
+ obj.display();
+ obj1[0].laptopnamelength("Lenovo");
+ obj1[0].compare_Each_two_Laptop_CompanyNames("Lenovo");
+ obj1[0].compare_Each_two_Laptop_CompanyNames("Lenovo", "Dell");
+ obj1[1].compare_Each_two_Laptop_Model("Y540");
+ obj1[1].compare_Each_two_Laptop_Model("Y540","Y790");
+ obj1[1].compare_Each_two_Laptop_Colours("Black");
+ obj1[1].compare_Each_two_Laptop_Colours("Black","Brown");
+ obj1[1].changeCompanyName("Lenovo", "MI");
+ obj1[1].changeModelName("Y640","Y540");
+ obj1[1].convertUpper("lenovo");
+ obj1[1].convertLower("LENOVO");
+ obj1[1].laptopnameRev("LENOVO");
+ obj1[1].laptop1subString("lenovo", "ovo");
+ obj1[1].changeCompanyName("Lenovo","Apple");
+ obj1[1].changeModelName("Y540","Y790");
+ obj2[0].Laptop_check(2);
+ obj2[0].laptopbox(5);
+ obj2[0].laptopbox(1,140);
+ obj2[0].laptopbox(1,140,true);
+ Mode obj4=new Aeroplane_Mode();
+ obj4.Turn_on();
+ TypesofOperatingSystem win1 = new Windows7();
+ TypesofOperatingSystem win2 = new Windows8();
+ TypesofOperatingSystem win3 = new Windows10();
+ TypesofOperatingSystem win4 = new Windows11();
+ win1.print();
+ win2.print();
+ win3.print();
+ win4.print();
+ 
+ GraphicCard object = new GraphicCard();
+ object.show2();
+ 
+ Webcam ob = new Webcam(); 
+ ob.show4(); 
+ 
+ Memory Obje = new Memory();
+ Obje.show5();
+ 
+ Gaming objec = new Gaming();
+ objec.WorkStation();
+ 
+ Clockspeed Obj =new Clockspeed();
+ Obj.Base_Clock();
+ 
+ Coolingpad Obj1=new Coolingpad();
+ Obj1.Check_Coolingpad();
+ 
+ Cache_Memory Obj2=new Cache_Memory();
+ Obj2.cache_data();
+ 
+Turbo Obj3 = new Turbo();
+Obj3.turbo_GHz();
+BatteryLife Obj4 =new BatteryLife();
+Obj4.check_BatteryLife();
+//final
+Basespeed Obj21=new Basespeed();
+Obj21.run();
+//Throw
+noofLaptopsPurchased1 Obj22= new noofLaptopsPurchased1();
+Obj22.PurchasedLaptops(1);
+//Throws
+noofLaptopsPurchased2 Obj23 = new noofLaptopsPurchased2(); 
+ try { 
+ System.out.println(Obj23.PurchasedLaptopsandBags(1, 0)); 
+ } 
+ catch (ArithmeticException e){ 
+ System.out.println("\nNumber cannot be divided by 0"); 
+ } 
+ System.out.println("Rest of the code.."); 
+ 
+ //Generic class using type T
+ CompanyandModelnum1 <Integer> intObj24 = new 
+CompanyandModelnum1<Integer>(540);
+ System.out.println("Model number:"+ intObj24.getObject());
+ CompanyandModelnum1 <String> stringObj25 =new 
+CompanyandModelnum1<String>("LENOVO");
+ System.out.println("Laptop Company name:"+stringObj25.getObject());
+ 
+ //Generic class using type T,U
+ CompanyandModelnum2<String,Integer> Obj26=new 
+CompanyandModelnum2<String,Integer>("Apple",13);
+ System.out.println(Obj26);
+ 
+//Threads
+String[] nameoflaptops= {"Lenovo","Dell","Apple"};
+String [] price= {"89000","78000","100000"};
+NewThread Obj9 = new NewThread(nameoflaptops);
+NewThread Obj10= new NewThread(price);
+System.out.println("Types of Laptops");
+Obj9.start();
+Obj9.join();
+Obj10.start();
+Obj10.join();
+System.out.println();
+String[] TypesofHDD = {"256GB","512GB","1TB","2TB"};
+String[] TypesofSSD = {"8GB","16GB","32GB","64GB"};
+LaptopThread Obj11 = new LaptopThread(TypesofHDD);
+LaptopThread Obj12= new LaptopThread(TypesofSSD);
+System.out.println("Types of HDD");
+Obj11.start();
+Obj11.join();
+System.out.println();
+System.out.println("Types of SDD");
+Obj12.start();
+Obj12.join();
+System.out.println();
+Bootprocess bootprocess = new Bootprocess(); 
+Power_button power_button = new Power_button(bootprocess); 
+Screen_appears screen_appears = new Screen_appears(bootprocess); 
+ 
+ Thread Obj13 = new Thread(bootprocess, "Bootprocess"); 
+ Thread Obj14 = new Thread(power_button, "power"); 
+ Thread Obj15 = new Thread(screen_appears, "Screen appeares"); 
+ 
+ Obj13.start(); 
+ Obj14.start(); 
+ Thread.sleep(100); 
+ Obj15.start(); 
+ 
+ System.out.println();
+Send send = new Send(); 
+Receive receive = new Receive(send); 
+ 
+ Thread Obj16 = new Thread(send, "Sending"); 
+ Thread Obj17 = new Thread(receive, "Receives"); 
+ 
+ Obj16.start(); 
+ Obj17.start(); 
+ Thread.sleep(100); 
+ 
+ System.out.println();
+ Dead_lock1 s1 = new Dead_lock1();
+ Dead_lock1 s2 = new Dead_lock1();
+ Thread1 t1 = new Thread1(s1, s2);
+ t1.start();
+ Thread2 t2 = new Thread2(s1, s2);
+ t2.start();
+ Dead_lock.sleep(2000);
+ 
+ RaceCondition raceCondition = new RaceCondition();
+ Thread Obj18 = new Thread(raceCondition, "Thread-1");
+ Thread Obj19 = new Thread(raceCondition, "Thread-2");
+ Thread Obj20 = new Thread(raceCondition, "Thread-3");
+ Obj18.start();
+ Obj19.start();
+ Obj20.start();
+ 
+flows Obj5=new flows();
+Obj5.areaofLaptopKeyboard();
+flows Obj6=new flows();
+Obj6.TotalCost();
+flows Obj7=new flows();
+Obj7.Profit();
+flows Obj8=new flows();
+Obj8.LengthofDisplay();
+ obj1[0].Assign_differentLaptops();
+ }
+}
+// Laptop is extended 
+class Computer extends Laptop{
+ Computer(String Nameoftheowner,int x,double y){ 
+ super(Nameoftheowner,x,y);
+ }
+ Computer(String colour,String model){
+ super(colour,model);
+ }
+ Computer(int x,int y){
+ super(x,y);
+ }
+ Computer(String ColourofLaptop,int y){
+ super(ColourofLaptop,y);
+ }
+ Computer(double x){
+ super(x);
+ }
+ Computer(int x,int y,int z){
+ super(x,y,z);
+ }
+ Computer(int x){
+ super(x);
+ }
+ Computer(String Graphics,int x,String keyboard){
+ super(Graphics,x,keyboard);
+ }
+ Computer(double x,String Countryoforigin){
+ super(x,Countryoforigin);
+ }
+ //Method overriding
+ //Changing Company Names
+ void changeCompanyName(String laptop1,String laptop2){ 
+ System.out.println("Laptop old name:"+laptop1);
+ laptop1=laptop1+laptop2; 
+ System.out.println("Laptop new name:"+laptop2);
+ }
+ //changing Model Name
+ void changeModelName(String laptop1,String laptop2){ 
+ System.out.println("laptop old Model name:"+laptop1);
+ laptop1=laptop1+laptop2; 
+ System.out.println("laptop new Model name:"+laptop2);
+ }
+}
+//class Computer is extended 
+ class Students extends Computer{
+ Students(String Nameoftheowner,int x,double y){
+ super(Nameoftheowner,x,y);
+ }
+//Checking laptop quantity
+ void Laptop_check(int laptops_quantity) {
+ if(laptops_quantity>=1) {
+ System.out.println("\nStudent have Laptop");
+ }
+ else{
+ System.out.println("\nStudent doesnt have Laptop");
+ }
+ }
+ //Method overloading
+ void laptopbox(int covers){
+ if(covers>1){
+ System.out.println("Laptop Box contains covers of laptop");
+ }
+ else{
+ System.out.println("Laptop Box doesnt contain covers of laptop");
+ }
+ } 
+ void laptopbox(int covers,double Chargerwatts){
+ if(covers>1){
+ System.out.println("Laptop Box contains covers of laptop");
+ }
+ else{
+ System.out.println("Laptop Box doesnt contain covers of laptop");
+ }
+ if(Chargerwatts>45){
+ System.out.println("Efficient Charger");
+ }
+ else{
+ System.out.println("Not an Efficient Charger");
+ }
+ }
+ void laptopbox(int covers,double Chargerwatts,Boolean LaptopGuide){
+ if(covers>1){
+ System.out.println("Laptop Box contains covers of laptop");
+ }
+ else{
+ System.out.println("Laptop Box doesnt contain covers of laptop");
+ }
+ if(Chargerwatts>45){
+ System.out.println("Efficient Charger");
+ }
+ else{
+ System.out.println("Not an Efficient Charger");
+ }
+ if(LaptopGuide==true){
+ System.out.println("Laptop box has guide");
+ }
+ else {
+ System.out.println("Laptop box doesnt have guide");
+ }
+ }
+ }
+ //Abstract Class
+ abstract class Mode{
+ abstract void Turn_on();
+ }
+ class Aeroplane_Mode extends Mode{
+ void Turn_on(){
+ System.out.println("\nIt disables the Wi-Fi network card, Bluetooth, and 
+any mobile data connection (3G/4G/5G) that you may have");
+ }
+ }
+//Interface 
+interface TypesofOperatingSystem{
+ void print();
+}
+class Windows7 implements TypesofOperatingSystem{
+ public void print()
+ {
+ System.out.println("My Laptop doesnt have Windows 7 operating 
+System");
+ }
+}
+class Windows8 implements TypesofOperatingSystem{
+ public void print()
+ {
+ System.out.println("My Laptop doesnt have Windows 8 Operating 
+System");
+ }
+}
+class Windows10 implements TypesofOperatingSystem{
+ public void print()
+ {
+ System.out.println("My Laptop doesnt have Windows 10 Operating 
+System");
+ }
+}
+class Windows11 implements TypesofOperatingSystem{
+ public void print()
+ {
+ System.out.println("My Laptop has Windows 11 operating System");
+ }
+}
+//Access specifiers
+//Private access specifier
+//It will not give output because private can be accessed only within the class
+class GraphicCard{
+private void show1() {
+System.out.println("GTX1650");
+}
+//Default Access specifier
+//It will give output because default can accessed within the package
+void show2() {
+System.out.println("Nvidia");
+}
+public static void main(String args[]) {
+GraphicCard object = new GraphicCard();
+object.show1();
+}
+}
+//Protected Access Specifier
+//The protected access modifier is accessible within package and outside the 
+package but through inheritance only.
+class Processor{
+protected void show3() {
+System.out.println("processor");
+}
+}
+//public Access Specifier
+//The public access modifier is accessible everywhere.
+class Webcam{
+public void show4(){
+System.out.println("Laptop has Webcam");
+}
+} 
+//Final class
+final class Memory {
+ public int data = 30;
+ public void show5() {
+ System.out.println(""+data);
+ }
+}
+//Exceptional Handling
+//Try..Catch Block
+class Gaming{
+void WorkStation(){
+try {
+int Max_Battery_hours[]= {6,9,17,18,20};
+System.out.println(Max_Battery_hours[5]);
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+}
+//Multiple Catch Block
+class Clockspeed{
+double Baseclock[]= {3.3,2.1,1.9,2.2,2.1,2.6};
+ int clock1 = 3;
+ int clock2 = 0;
+ void Base_Clock(){
+ try{
+ System.out.println(clock1/clock2);
+ System.out.println("6th element of given array = " + Baseclock[6]);
+ }catch(ArithmeticException e){ 
+ System.out.println(e);
+ }
+ catch(ArrayIndexOutOfBoundsException e){
+ System.out.println(e);
+ }
+ catch(Exception e) {
+ System.out.println(e);
+ }
+ System.out.println("Remaining code after exception handling.");
+ }
+}
+//Null point Exception
+class Coolingpad
+{
+void Check_Coolingpad() {
+ try {
+ String Cooling_pad = null; 
+ System.out.println(Cooling_pad.charAt(0));
+ } catch(NullPointerException e) {
+ System.out.println("NullPointerException..");
+ }
+ }
+}
+//Nested Try 
+class Cache_Memory { 
+void cache_data(){
+try{ 
+ try{ 
+ System.out.println("Divide by 0"); 
+ int x =20/0; 
+ }
+catch(ArithmeticException e) 
+{ 
+ System.out.println(e); 
+} 
+try{ 
+int cache[]= {24,14,12,18,10,36}; 
+ cache[25]=40; 
+} 
+catch(ArrayIndexOutOfBoundsException e) 
+ { 
+System.out.println(e); 
+ } 
+ System.out.println("Other statement"); 
+ } 
+catch(Exception e) 
+{ 
+System.out.println("handled the exception (outer catch)"); 
+ } 
+ System.out.println("normal flow.."); 
+ } 
+}
+//Finally Clause
+class Turbo{
+ void turbo_GHz() {
+ double GHz[] = {4.5,4.4,4.2,4.1,4.0};
+ try {
+ System.out.println("Access element:" + GHz[7]);
+ } catch (ArrayIndexOutOfBoundsException e) {
+ System.out.println("Exception thrown :" + e);
+ }finally {
+ System.out.println("First element value: " + GHz[0]);
+ System.out.println("The finally statement is executed");
+ }
+ }
+}
+//Throw Clause
+class BatteryLife { 
+void check_BatteryLife(){ 
+ try { 
+ int min_Battery_hours = 4; 
+ if (min_Battery_hours< 5) throw new ArithmeticException();
+ }catch (Exception e){ 
+ System.out.println(e);
+ }
+ }
+}
+//Overflow
+//Underflow
+class Overflow extends Exception{
+Overflow (){
+ super("Overflow Exception (input >=2147483647)");
+ }
+}
+class Underflow extends Exception{
+ Underflow (){
+ super("Underflow Exception(input <=2147483647)");
+ }
+}
+class flows{
+void areaofLaptopKeyboard() {
+Scanner sc=new Scanner(System.in);
+try {
+System.out.println("Enter the area of the laptop keyboard:");
+int area= sc.nextInt();
+if(area>=Integer. MAX_VALUE) 
+throw new Overflow();
+else if(area<=Integer. MIN_VALUE) 
+throw new Underflow();
+else
+ System.out.println("area of the laptop:"+area);
+}
+catch(Underflow e) {
+ System.out.println(e);
+}
+ catch(Overflow e) {
+ System.out.println(e);
+ }
+}
+void TotalCost() {
+Scanner sc=new Scanner(System.in);
+try {
+System.out.println("\nEnter the Total cost of the laptop:");
+int totalcost= sc.nextInt();
+if(totalcost>=Integer. MAX_VALUE) 
+throw new Overflow();
+else if(totalcost<=Integer. MIN_VALUE) 
+throw new Underflow();
+else
+ System.out.println("Total cost of the laptop:"+totalcost);
+}
+catch(Underflow e) {
+ System.out.println(e);
+}
+ catch(Overflow e) {
+ System.out.println(e);
+ }
+}
+void Profit() {
+Scanner sc=new Scanner(System.in);
+try {
+System.out.println("Enter the profit to the seller:");
+int profit= sc.nextInt();
+if(profit>=Integer. MAX_VALUE) 
+throw new Overflow();
+else if(profit<=Integer. MIN_VALUE) 
+throw new Underflow();
+else
+ System.out.println("Profit to the seller:"+profit);
+}
+catch(Underflow e) {
+ System.out.println(e);
+}
+ catch(Overflow e) {
+ System.out.println(e);
+ }
+}
+void LengthofDisplay() {
+Scanner sc=new Scanner(System.in);
+try {
+System.out.println("Enter the length of display of the laptop:");
+int length= sc.nextInt();
+if(length>=Integer. MAX_VALUE) 
+throw new Overflow();
+else if(length<=Integer. MIN_VALUE) 
+throw new Underflow();
+else
+ System.out.println("length of display of the laptop:"+length);
+}
+catch(Underflow e) {
+ System.out.println(e);
+}
+ catch(Overflow e) {
+ System.out.println(e);
+ }
+ }
+}
+//Thread class
+//create a new thread
+class NewThread extends Thread{
+public static Object obj = new Object(); 
+String[] temp=new String[10];
+NewThread(String[] temp){
+for(int i=0;i<3;i++)
+this.temp[i]=temp[i];
+}
+//run
+public void run() {
+try {
+for(int i=0;i<3;i++) {
+System.out.print(temp[i]+" ");
+//sleep
+Thread.sleep(1000);
+//Sychronized
+synchronized (obj) 
+ { 
+//wait
+ obj.wait(2000); 
+ System.out.println("-----> Next Object is in waiting 
+state and woken after 2 seconds"); 
+ } 
+ } 
+}catch(Exception e){
+System.out.println(e);
+}
+}
+}
+//create a new thread
+class LaptopThread extends Thread{
+public static Object obj1 =new Object();
+String Specifications[] = new String[100] ;
+ LaptopThread(String []Specifications ) {
+ for(int i=0;i<4;i++) 
+ this.Specifications[i]=Specifications[i];
+ }
+ //run
+ public void run() {
+ try {
+ for(int i=0;i<4;i++) {
+ System.out.print(Specifications[i]+" ");
+ //sleep
+ Thread.sleep(1000);
+ //sychronized
+ synchronized(obj1)
+ {
+ //wait
+ obj1.wait(3000);
+ System.out.println("-----> Next Object is 
+in waiting state and woken after 3 seconds"); 
+ }
+ }
+ }catch(Exception e){
+ System.out.println(e);
+ }
+ }
+}
+class Bootprocess extends Thread 
+{ 
+ public void run() 
+ { 
+ synchronized(this) 
+ { 
+ System.out.println("Starting of the " + 
+Thread.currentThread().getName()); 
+ try { 
+ this.wait(); 
+ } 
+ catch (InterruptedException e) { 
+ System.out.println(e);
+ } 
+ System.out.println(Thread.currentThread().getName() + "...its notified"); 
+ } 
+ } 
+} 
+class Power_button extends Thread { 
+Bootprocess bootprocess; 
+Power_button(Bootprocess bootprocess1) 
+ { 
+ this.bootprocess = bootprocess1; 
+ } 
+ public void run() 
+ { 
+ synchronized(this.bootprocess) 
+ { 
+ System.out.println("Starting of " + Thread.currentThread().getName()); 
+ try { 
+ this.bootprocess.wait(); 
+ } 
+ catch (InterruptedException e) { 
+ System.out.println(e); 
+ } 
+ System.out.println(Thread.currentThread().getName() + "...its notified"); 
+ } 
+ } 
+} 
+class Screen_appears extends Thread 
+{ 
+Bootprocess bootprocess; 
+Screen_appears(Bootprocess bootprocess) 
+ { 
+ this.bootprocess = bootprocess; 
+ } 
+ public void run() 
+ { 
+ synchronized(this.bootprocess) 
+ { 
+ System.out.println("Starting of " + Thread.currentThread().getName()); 
+ //notify() method 
+ this.bootprocess.notify(); 
+ System.out.println(Thread.currentThread().getName() + "...its notified"); 
+ } 
+ } 
+}
+class Send extends Thread{
+ public void run() 
+ { 
+ synchronized(this) 
+ { 
+ System.out.println("Sending.."+ Thread.currentThread().getName()); 
+ try { 
+ this.wait(); 
+ } 
+ catch (InterruptedException e) { 
+ System.out.println(e);
+ } 
+ System.out.println(Thread.currentThread().getName() + "Sent"); 
+ } 
+ } 
+} 
+class Receive extends Thread { 
+Send send; 
+Receive(Send send) 
+ { 
+ this.send = send; 
+ } 
+ public void run() 
+ { 
+ synchronized(this.send) 
+ { 
+ System.out.println("Receiving " + Thread.currentThread().getName()); 
+ this.send.notifyAll(); 
+ System.out.println(Thread.currentThread().getName() + "Received"); 
+ } 
+ } 
+} 
+//Dead Lock
+class Dead_lock
+{
+ static void sleep(long millis)
+ {
+ try
+ {
+ Thread.sleep(millis);
+ }
+ catch (InterruptedException e)
+ {
+ System.out.println(e);
+ }
+ }
+public void test1(Dead_lock s2) {
+}
+}
+class Dead_lock1
+{
+ synchronized void test1(Dead_lock1 s2)
+ {
+ System.out.println("Thread 1 locked");
+ Dead_lock.sleep(1000);
+ s2.test2();
+ System.out.println("Thread 1 locked");
+ }
+ synchronized void test2()
+ {
+ System.out.println("Thread 2 locked");
+ Dead_lock.sleep(1000);
+ System.out.println("Thread2 locked");
+ }
+}
+class Thread1 extends Thread
+{
+ private Dead_lock1 s1;
+ private Dead_lock1 s2;
+ public Thread1(Dead_lock1 s1, Dead_lock1 s2)
+ {
+ this.s1 = s1;
+ this.s2 = s2;
+ }
+ @Override
+ public void run()
+ {
+ s1.test1(s2);
+ }
+}
+class Thread2 extends Thread
+{
+ private Dead_lock1 s1;
+ private Dead_lock1 s2;
+ public Thread2(Dead_lock1 s1, Dead_lock1 s2)
+ {
+ this.s1 = s1;
+ this.s2 = s2;
+ }
+ public void run()
+ {
+ s2.test1(s1);
+ }
+}
+//Race condition
+class RaceCondition implements Runnable{
+ private int n = 0;
+ public void increment() {
+ try {
+ Thread.sleep(10);
+ } catch (InterruptedException e) {
+ System.out.println(e);
+ }
+ n++;
+ }
+ public void decrement() { 
+ n--;
+ }
+ public int getValue() {
+ return n;
+ }
+ 
+ @Override
+ public void run() {
+ this.increment();
+ System.out.println(" After incrementing, the Value of Thread:"+ 
+Thread.currentThread().getName() + " " + this.getValue());
+ this.decrement();
+ System.out.println("At last Value of Thread: " + 
+Thread.currentThread().getName() + " " + this.getValue()); 
+ }
+}
+//final keyword
+// final variable
+class Basespeed{ 
+final double base_speed= 2.59;//final variable 
+void run(){ 
+ double base_speed= 3.00; 
+ System.out.println("base speed is"+base_speed);
+}
+}
+//Throw
+class noofLaptopsPurchased1{
+ void PurchasedLaptops(int num)
+ {
+ try {
+ throw new ArithmeticException();
+ }
+ catch (ArithmeticException e) {
+ System.out.println(e);
+ }
+ }
+}
+//Throws
+class noofLaptopsPurchased2 { 
+ int PurchasedLaptopsandBags(int m, int n) throws ArithmeticException { 
+ int dividebill = m / n; 
+ return dividebill; 
+ } 
+}
+//Generic using type T
+class CompanyandModelnum1<T>
+{
+ T obj;
+ CompanyandModelnum1(T obj) { 
+ this.obj = obj; 
+ } 
+ public T getObject() {
+ return this.obj; 
+ }
+}
+//Generic using type T,U
+//Two parameters
+class CompanyandModelnum2<T, U>{
+T Companyname; 
+ U Modelnum; 
+ public CompanyandModelnum2(T Companyname, U Modelnum) {
+ this.Companyname = Companyname;
+ this.Modelnum = Modelnum;
+ }
+ public T getCompanyname() {
+ return Companyname;
+ }
+ public void setCompanyname(T Companyname) {
+ this.Companyname = Companyname;
+ }
+ public U getModelnum() {
+ return Modelnum;
+ }
+ public void setModelnum(U Modelnum) {
+ this.Modelnum = Modelnum;
+ }
+ public String toString() {
+ return "Another Laptop Company name and Model Number: [Company 
+name=" + Companyname + ", Model Number=" + Modelnum + "]";
+ }
+}
